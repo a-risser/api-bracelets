@@ -1,7 +1,6 @@
 FROM python:3
 ADD __main__.py /
-COPY requirements.txt /opt/app/requirements.txt
-WORKDIR /opt/app
+COPY requirements.txt /requirements.txt
+WORKDIR /
 RUN pip install -r requirements.txt
-COPY . /opt/app
-CMD [ "python", "./python \_\_main\_\_.py -H 0.0.0.0" ]
+CMD [ python __main__.py -H 0.0.0.0 ]
